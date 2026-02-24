@@ -1,0 +1,124 @@
+/* src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    background-color: #00091d;
+    /* Paint the "basement" dark blue */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: #00091d;
+    /* Paint the "floor" dark blue */
+    overscroll-behavior: none;
+    /* Stops the "bounce" effect on iPhone */
+}
+
+#root {
+    width: 100%;
+    /* Let the content decide the height */
+    position: relative;
+}
+
+/* --- 1. DEFAULT DESKTOP STYLE --- */
+.hotel-vector {
+    width: 80%;
+    /* We put the 80% back here for desktop */
+    margin: 0 auto;
+}
+
+/* --- MOBILE FIXES (The "Sky Buffer" Solution) --- */
+@media (max-width: 768px) {
+
+    #main-container {
+        /* Set a fallback background color just in case */
+        background-color: #e4dcd1;
+
+        height: auto !important;
+        min-height: 100vh;
+        overflow-x: hidden;
+        overflow-y: visible;
+        position: relative;
+    }
+
+    .hotel-vector {
+        /* 🔴 1. LOCK HEIGHT */
+        height: 100svh !important;
+
+        /* 2. PIN TO BOTTOM */
+        position: fixed !important;
+        bottom: 0 !important;
+        top: auto !important;
+
+        /* 3. CENTER */
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        width: auto !important;
+        min-width: 180vh;
+
+        /* 4. SOLIDITY (No animations) */
+        z-index: 0;
+        backface-visibility: hidden;
+        transition: none !important;
+        /* <--- No more smooth zoom. Rock solid. */
+    }
+}
+
+/* === Santos Registry site globals moved from inline styles === */
+
+/* Enclave pulse animation */
+#enclave-svg-container .enclave-dot {
+    animation: enclave-pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes enclave-pulse {
+    0%,
+    100% {
+        opacity: 0.65;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Scrollbar and blueprint frame styling */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #F2F0E9;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #d1cfc7;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #877b64;
+}
+
+.blueprint-grid {
+    border: 1px solid #d1cfc7;
+}
+
+.blueprint-border-b {
+    border-bottom: 1px solid #d1cfc7;
+}
+
+.blueprint-border-r {
+    border-right: 1px solid #d1cfc7;
+}
+
+.blueprint-border-l {
+    border-left: 1px solid #d1cfc7;
+}
+
+.blueprint-border-t {
+    border-top: 1px solid #d1cfc7;
+}
