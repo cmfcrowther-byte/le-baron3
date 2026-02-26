@@ -481,57 +481,57 @@ function SantosSite({ onOpenInquire }) {
                 </section>
 
                 {/* HERITAGE RESTORATION */}
-                <section className="mt-12 md:mt-20 py-20 md:py-24 px-8 md:px-20 bg-paper">
-                    <div className="max-w-5xl mx-auto space-y-10">
-                        <div className="space-y-6">
-                            <span className="copy-eyebrow flex items-center gap-4">
-                                The Heritage Restoration <span className="h-[1px] w-12 bg-stone-light/40" />
-                            </span>
-                            <h2 className="copy-section-title">
-                                Architectural Stewardship
-                            </h2>
-                            <p className="copy-body">
-                                Standing as a testament to Lisbon&apos;s aristocratic past, the existing structure presents an
-                                unrepeatable canvas for restoration. Behind its classical façade lies a volume of space rarely
-                                found in Santos-o-Velho today. Our objective is not merely to renovate, but to meticulously
-                                resurrect the palatial grandeur of the 19th century while discreetly integrating the technological
-                                infrastructure required of a modern, ultra-luxury hospitality asset.
-                            </p>
-                        </div>
+                <section className="mt-12 md:mt-20 pt-16 pb-20 md:pt-20 md:pb-24 px-8 md:px-20 bg-paper">
+                    <div className="w-full flex justify-center">
+                        <div className="w-[60vw] space-y-10">
+                            <div className="space-y-6">
+                                <span className="copy-eyebrow flex items-center gap-4">
+                                    The Heritage Restoration <span className="h-[1px] w-12 bg-stone-light/40" />
+                                </span>
+                                <h2 className="copy-section-title">
+                                    Architectural Stewardship
+                                </h2>
+                                <p className="copy-body">
+                                    Standing as a testament to Lisbon&apos;s aristocratic past, the existing structure presents an
+                                    unrepeatable canvas for restoration. Behind its classical façade lies a volume of space rarely
+                                    found in Santos-o-Velho today. Our objective is not merely to renovate, but to meticulously
+                                    resurrect the palatial grandeur of the 19th century while discreetly integrating the technological
+                                    infrastructure required of a modern, ultra-luxury hospitality asset.
+                                </p>
+                            </div>
 
-                        <div className="w-full flex justify-center">
-                            <div className="w-[60vw] bg-stone-light/20 relative overflow-hidden rounded-sm flex items-center justify-center">
+                            <div className="bg-stone-light/20 relative overflow-hidden rounded-sm flex items-center justify-center">
                                 <img
                                     src={facadeDesaturated}
                                     alt="Desaturated façade of the restored Lisbon palace"
                                     className="w-full h-full object-contain hover:scale-[1.03] transition-transform duration-700"
                                 />
                             </div>
-                        </div>
 
-                        <ul className="mt-4 space-y-2">
-                            <li className="flex gap-2">
-                                <span className="text-primary mt-[2px]">•</span>
-                                <span className="copy-list">
-                                    <span className="font-semibold text-charcoal">The Façade:</span> Preserving the original
-                                    aristocratic detailing and streetscape rhythm.
-                                </span>
-                            </li>
-                            <li className="flex gap-2">
-                                <span className="text-primary mt-[2px]">•</span>
-                                <span className="copy-list">
-                                    <span className="font-semibold text-charcoal">The Volume:</span> Restoring the exceptional
-                                    3.8m ceiling heights that define true palatial living.
-                                </span>
-                            </li>
-                            <li className="flex gap-2">
-                                <span className="text-primary mt-[2px]">•</span>
-                                <span className="copy-list">
-                                    <span className="font-semibold text-charcoal">The Dialogue:</span> A meticulous balance of
-                                    strict historical preservation and contemporary execution.
-                                </span>
-                            </li>
-                        </ul>
+                            <ul className="mt-4 space-y-2">
+                                <li className="flex gap-2">
+                                    <span className="text-primary mt-[2px]">•</span>
+                                    <span className="copy-list">
+                                        <span className="font-semibold text-charcoal">The Façade:</span> Preserving the original
+                                        aristocratic detailing and streetscape rhythm.
+                                    </span>
+                                </li>
+                                <li className="flex gap-2">
+                                    <span className="text-primary mt-[2px]">•</span>
+                                    <span className="copy-list">
+                                        <span className="font-semibold text-charcoal">The Volume:</span> Restoring the exceptional
+                                        3.8m ceiling heights that define true palatial living.
+                                    </span>
+                                </li>
+                                <li className="flex gap-2">
+                                    <span className="text-primary mt-[2px]">•</span>
+                                    <span className="copy-list">
+                                        <span className="font-semibold text-charcoal">The Dialogue:</span> A meticulous balance of
+                                        strict historical preservation and contemporary execution.
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </section>
 
