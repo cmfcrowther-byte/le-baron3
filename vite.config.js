@@ -8,5 +8,19 @@ export default defineConfig({
     react(),
     svgr()
   ],
-  base: "/hotel-lisbon/", // 👈 IMPORTANT: This must match your GitHub Repo name!
+  base: "/le-baron2/", // 👈 IMPORTANT: This must match your GitHub Repo name!
+  build: {
+    rollupOptions: {
+      input: {
+        main: 'index.html',
+        stewardship: 'stewardship.html',
+        archive: 'archive.html',
+      },
+    },
+  },
+  server: {
+    proxy: {
+      '/api': { target: 'http://localhost:3001', changeOrigin: true },
+    },
+  },
 })

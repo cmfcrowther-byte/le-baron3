@@ -36,7 +36,7 @@ body {
 
     #main-container {
         /* Set a fallback background color just in case */
-        background-color: #e4dcd1;
+        background-color: #f1f0ea;
 
         height: auto !important;
         min-height: 100vh;
@@ -92,7 +92,7 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-    background: #F2F0E9;
+    background: #f1f0ea;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -121,4 +121,22 @@ body {
 
 .blueprint-border-t {
     border-top: 1px solid #d1cfc7;
+}
+
+@layer components {
+    .copy-body {
+        @apply text-stone text-sm md:text-base font-light leading-relaxed;
+    }
+
+    .copy-body-muted {
+        @apply text-stone/80 text-sm md:text-base font-light leading-relaxed;
+    }
+
+    .copy-eyebrow {
+        @apply text-primary text-[10px] font-bold uppercase tracking-[0.4em];
+    }
+
+    .copy-section-title {
+        @apply font-serif text-charcoal text-3xl md:text-4xl font-light;
+    }
 }

@@ -14,9 +14,9 @@ const Sky = (props) => {
             console.log("SKY ORDERS RECEIVED:", startPoint, endPoint);
 
             gsap.fromTo(skyRef.current,
-                { backgroundColor: "#e4dcd1ff" }, // Day
+                { backgroundColor: "#f1f0eaff" }, // Day (brand-paper)
                 {
-                    backgroundColor: "#00091dd4", // Night
+                    backgroundColor: "#00091dd4", // Night (brand-midnight with alpha)
                     ease: "none",
                     scrollTrigger: {
                         trigger: "body",
@@ -37,7 +37,7 @@ const Sky = (props) => {
             /* 🔴 FIXED: Oversize the sky so it never reveals white gaps */
             height: '120vh',
 
-            zIndex: 0, pointerEvents: 'none', backgroundColor: "#e4dcd1ff"
+            zIndex: 0, pointerEvents: 'none', backgroundColor: "#f1f0eaff"
         }} />
     );
 };

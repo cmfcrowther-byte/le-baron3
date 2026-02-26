@@ -150,15 +150,15 @@ const ContentLayer = () => {
         fontSize: '10px',
         letterSpacing: '1px',
         textTransform: 'uppercase',
-        color: '#999',
+        color: '#999999', // brand-muted
         fontWeight: 'bold'
     };
 
     return (
-        <div ref={containerRef} style={{ position: 'relative', zIndex: 10, backgroundColor: '#fafafa', width: '100%', overflow: 'hidden' }}>
+        <div ref={containerRef} style={{ position: 'relative', zIndex: 10, backgroundColor: '#f1f0ea', width: '100%', overflow: 'hidden' }}>
 
             {/* HERO */}
-            <div ref={heroRef} style={{ height: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', backgroundColor: '#fafafa' }}>
+            <div ref={heroRef} style={{ height: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', backgroundColor: '#f1f0ea' }}>
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px' }}>
                     <h2 ref={staticTextRef} style={{ fontSize: '40px', fontFamily: 'Georgia, serif', color: '#1a1a1a', margin: 0, textAlign: 'center', lineHeight: 1 }}>ENGINEERING</h2>
                     <div ref={wordMaskRef} style={{ fontSize: '40px', height: '1em', overflow: 'hidden', position: 'relative', width: '100%', display: 'flex', justifyContent: 'center', lineHeight: 1 }}>
@@ -177,7 +177,7 @@ const ContentLayer = () => {
 
                 <div style={{ marginBottom: '50px', textAlign: 'center', maxWidth: '600px' }}>
                     <h2 style={{ fontSize: '3rem', fontFamily: 'Georgia, serif', color: '#1a1a1a', fontWeight: 'bold', marginBottom: '1rem', lineHeight: 1.1 }}>Form follows physics.</h2>
-                    <p style={{ fontSize: '1.2rem', color: '#555', fontFamily: 'Georgia, serif', lineHeight: 1.7 }}>We design digital environments that respect momentum, weight, and inertia. It doesn't just look real. It feels real.</p>
+                    <p style={{ fontSize: '1.2rem', color: '#999999', fontFamily: 'Georgia, serif', lineHeight: 1.7 }}>We design digital environments that respect momentum, weight, and inertia. It doesn't just look real. It feels real.</p>
                 </div>
 
                 <div style={glassStyle}>
@@ -246,25 +246,25 @@ const ContentLayer = () => {
             <div style={{ padding: '100px 20px', maxWidth: '1200px', margin: '0 auto' }}>
                 <div ref={gridRef} style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '60px' }}>
                     <div>
-                        <div style={{ height: '150px', background: '#eee', marginBottom: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '8px' }}>
-                            <span style={{ color: '#999' }}>SPEED.svg</span>
+                        <div style={{ height: '150px', background: '#f1f0ea', marginBottom: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '8px' }}>
+                            <span style={{ color: '#999999' }}>SPEED.svg</span>
                         </div>
                         <h3 style={{ fontSize: '1.5rem', marginBottom: '10px' }}>Velocity</h3>
-                        <p style={{ color: '#666', lineHeight: 1.6 }}>No video files. No bloat. Just pure, weightless code that loads instantly.</p>
+                        <p style={{ color: '#999999', lineHeight: 1.6 }}>No video files. No bloat. Just pure, weightless code that loads instantly.</p>
                     </div>
                     <div>
-                        <div style={{ height: '150px', background: '#eee', marginBottom: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '8px' }}>
-                            <span style={{ color: '#999' }}>SEO.svg</span>
+                        <div style={{ height: '150px', background: '#f1f0ea', marginBottom: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '8px' }}>
+                            <span style={{ color: '#999999' }}>SEO.svg</span>
                         </div>
                         <h3 style={{ fontSize: '1.5rem', marginBottom: '10px' }}>Visibility</h3>
-                        <p style={{ color: '#666', lineHeight: 1.6 }}>Google reads every word. High-performance SEO that doesn't sacrifice style.</p>
+                        <p style={{ color: '#999999', lineHeight: 1.6 }}>Google reads every word. High-performance SEO that doesn't sacrifice style.</p>
                     </div>
                     <div>
-                        <div style={{ height: '150px', background: '#eee', marginBottom: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '8px' }}>
-                            <span style={{ color: '#999' }}>DEVICE.svg</span>
+                        <div style={{ height: '150px', background: '#f1f0ea', marginBottom: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '8px' }}>
+                            <span style={{ color: '#999999' }}>DEVICE.svg</span>
                         </div>
                         <h3 style={{ fontSize: '1.5rem', marginBottom: '10px' }}>Fluency</h3>
-                        <p style={{ color: '#666', lineHeight: 1.6 }}>One fluid experience across every device. From 27-inch iMacs to 5-inch screens.</p>
+                        <p style={{ color: '#999999', lineHeight: 1.6 }}>One fluid experience across every device. From 27-inch iMacs to 5-inch screens.</p>
                     </div>
                 </div>
             </div>

@@ -11,6 +11,7 @@ function SantosSite({ onOpenInquire }) {
     // When map enters view: cascade labels (reverse order), cartouche fades in then text types in fast
     useLayoutEffect(() => {
         let st;
+        let stAll;
         const run = () => {
             const container = mapRef.current;
             if (!container) return;
@@ -45,6 +46,15 @@ function SantosSite({ onOpenInquire }) {
             const typingMsPerChar = 28;
             const staggerDelay = 0.85;
 
+            const showAllLabels = () => {
+                ordered.forEach(({ group, lines }) => {
+                    group.style.opacity = '1';
+                    lines.forEach(({ tspan, fullText }) => {
+                        tspan.textContent = fullText;
+                    });
+                });
+            };
+
             st = ScrollTrigger.create({
                 trigger: '#map',
                 start: 'top 82%',
@@ -76,12 +86,21 @@ function SantosSite({ onOpenInquire }) {
                     });
                 },
             });
+
+            // Safety net: if the user scrolls past the map quickly, force all labels/cartouches fully visible
+            stAll = ScrollTrigger.create({
+                trigger: '#map',
+                start: 'bottom 20%',
+                once: true,
+                onEnter: showAllLabels,
+            });
         };
 
         const id = requestAnimationFrame(() => run());
         return () => {
             cancelAnimationFrame(id);
             if (st) st.kill();
+            if (stAll) stAll.kill();
         };
     }, []);
 
@@ -203,17 +222,17 @@ function SantosSite({ onOpenInquire }) {
                 <section className="pt-[12rem] pb-24 px-8 md:px-16" id="narrative">
                     <div className="max-w-4xl mx-auto space-y-16">
                         <header className="space-y-4 text-left">
-                            <span className="text-primary text-[10px] font-bold uppercase tracking-[0.4em] flex items-center gap-4">
+                            <span className="copy-eyebrow flex items-center gap-4">
                                 The Strategic Narrative <span className="h-[1px] w-12 bg-stone-light/40" />
                             </span>
-                            <h2 className="text-charcoal font-serif text-4xl md:text-5xl lg:text-6xl font-light">
+                            <h2 className="copy-section-title">
                                 Asset Strategy · Phased Value Creation
                             </h2>
-                            <p className="text-stone text-sm md:text-base font-light leading-relaxed tracking-wide">
+                            <p className="copy-body">
                                 We are deploying a dual-asset strategy to anchor the district: first, by establishing a cultural
                                 epicenter, and second, by restoring a heritage landmark.
                             </p>
-                            <p className="text-stone text-sm md:text-base font-light leading-relaxed tracking-wide">
+                            <p className="copy-body">
                                 This sequencing mitigates the traditional ramp-up risk associated with hospitality developments by
                                 activating the membership base and revenue stream immediately. The result is a pre-conditioned
                                 market and captive occupancy demand established prior to the Hotel&apos;s delivery.
@@ -224,7 +243,7 @@ function SantosSite({ onOpenInquire }) {
                             {/* Phase I */}
                             <article className="space-y-4 scroll-mt-28" id="prologue">
                                 <div className="space-y-3">
-                                    <span className="text-primary text-[10px] font-bold uppercase tracking-[0.4em] flex items-center gap-4">
+                                    <span className="copy-eyebrow flex items-center gap-4">
                                         Phase I <span className="h-[1px] w-12 bg-stone-light/40" />
                                     </span>
                                     <h3 className="text-charcoal font-serif text-2xl md:text-3xl lg:text-4xl font-light">
@@ -232,7 +251,7 @@ function SantosSite({ onOpenInquire }) {
                                     </h3>
                                     <p className="text-[10px] uppercase tracking-widest text-stone/70">Operational 2026</p>
                                 </div>
-                                <p className="text-stone text-sm md:text-base font-light leading-relaxed tracking-wide">
+                                <p className="copy-body">
                                     An intimate flagship townhouse serving as the project&apos;s cultural anchor. Before the
                                     hotel&apos;s inauguration, this venue operates as a private members&apos; salon—establishing
                                     the brand&apos;s exclusivity and defining the district&apos;s new social hierarchy.
@@ -257,7 +276,7 @@ function SantosSite({ onOpenInquire }) {
                             {/* Phase II */}
                             <article className="space-y-4 scroll-mt-28" id="riverside">
                                 <div className="space-y-3">
-                                    <span className="text-primary text-[10px] font-bold uppercase tracking-[0.4em] flex items-center gap-4">
+                                    <span className="copy-eyebrow flex items-center gap-4">
                                         Phase II <span className="h-[1px] w-12 bg-stone-light/40" />
                                     </span>
                                     <h3 className="text-charcoal font-serif text-2xl md:text-3xl lg:text-4xl font-light">
@@ -265,7 +284,7 @@ function SantosSite({ onOpenInquire }) {
                                     </h3>
                                     <p className="text-[10px] uppercase tracking-widest text-stone/70">Completing 2029</p>
                                 </div>
-                                <p className="text-stone text-sm md:text-base font-light leading-relaxed tracking-wide">
+                                <p className="copy-body">
                                     The meticulous restoration of a grand 19th-century palace fronting the Tagus River. Anchored
                                     by 27 suites and extensive private gardens, this asset scales the Maison&apos;s intimacy into a
                                     permanent, trophy hospitality destination.
@@ -300,7 +319,7 @@ function SantosSite({ onOpenInquire }) {
                         </div>
                     </div>
                 </section>
-
+                
                 {/* MAP / ENCLAVE SECTION */}
                 <section className="relative bg-paper pt-4 pb-8 md:pt-8 md:pb-12" id="map">
                     <div ref={mapRef} className="w-full overflow-hidden min-w-0" id="enclave-svg-container">
@@ -308,15 +327,15 @@ function SantosSite({ onOpenInquire }) {
                     </div>
 
                     <div className="max-w-4xl mx-auto px-8 md:px-12 py-12 md:py-16">
-                        <span className="text-primary text-[10px] font-bold uppercase tracking-[0.4em] flex items-center gap-4 mb-4">
+                        <span className="copy-eyebrow flex items-center gap-4 mb-4">
                             The Location <span className="h-[1px] w-12 bg-stone-light/40" />
                         </span>
-                        <h2 className="font-serif text-4xl text-charcoal mb-2">The Enclave</h2>
-                        <p className="text-stone text-sm font-medium leading-relaxed mb-6">
+                        <h2 className="copy-section-title mb-2">The Enclave</h2>
+                        <p className="copy-body-muted mb-6">
                             Lisbon&apos;s seat of long-term capital preservation.
                         </p>
                         <div className="w-12 h-[1px] bg-primary mb-6" />
-                        <p className="text-stone text-sm leading-relaxed mb-8">
+                        <p className="copy-body mb-8">
                             Originally the residential seat of 18th-century nobility, Santos-o-Velho has reclaimed its position
                             as the city&apos;s undisputed aesthetic heart. A village-scale enclave of foreign embassies and
                             galleries, the district commands the capital&apos;s highest demand while retaining a barrier to
@@ -350,7 +369,7 @@ function SantosSite({ onOpenInquire }) {
                         </div>
                     </div>
                 </section>
-
+                
                 {/* PORTFOLIO GRID */}
                 <section>
                     <div className="grid grid-cols-1 md:grid-cols-2">
@@ -463,6 +482,55 @@ function SantosSite({ onOpenInquire }) {
                     </div>
                 </section>
 
+                {/* HERITAGE RESTORATION */}
+                <section className="mt-12 md:mt-20 py-20 md:py-24 px-8 md:px-20 bg-paper">
+                    <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 items-start">
+                        <div className="space-y-6">
+                            <span className="text-primary text-[10px] font-bold uppercase tracking-[0.4em] flex items-center gap-4">
+                                The Heritage Restoration <span className="h-[1px] w-12 bg-stone-light/40" />
+                            </span>
+                            <h2 className="text-charcoal font-serif text-3xl md:text-4xl font-light">
+                                A Palatial Resurrection
+                            </h2>
+                            <p className="copy-body">
+                                Standing as a testament to Lisbon&apos;s aristocratic past, the existing structure presents an
+                                unrepeatable canvas for restoration. Behind its classical façade lies a volume of space rarely
+                                found in Santos-o-Velho today. Our objective is not merely to renovate, but to meticulously
+                                resurrect the palatial grandeur of the 19th century while discreetly integrating the technological
+                                infrastructure required of a modern, ultra-luxury hospitality asset.
+                            </p>
+                            <ul className="mt-4 space-y-2 text-stone text-sm md:text-base font-light leading-relaxed">
+                                <li className="flex gap-2">
+                                    <span className="text-primary mt-[2px]">•</span>
+                                    <span>
+                                        <span className="font-semibold text-charcoal">The Façade:</span> Preserving the original
+                                        aristocratic detailing and streetscape rhythm.
+                                    </span>
+                                </li>
+                                <li className="flex gap-2">
+                                    <span className="text-primary mt-[2px]">•</span>
+                                    <span>
+                                        <span className="font-semibold text-charcoal">The Volume:</span> Restoring the exceptional
+                                        3.8m ceiling heights that define true palatial living.
+                                    </span>
+                                </li>
+                                <li className="flex gap-2">
+                                    <span className="text-primary mt-[2px]">•</span>
+                                    <span>
+                                        <span className="font-semibold text-charcoal">The Dialogue:</span> A meticulous balance of
+                                        strict historical preservation and contemporary execution.
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div className="relative w-full h-full min-h-[260px] bg-stone-light/30 rounded-sm overflow-hidden flex items-center justify-center">
+                            <span className="text-[11px] tracking-[0.2em] uppercase text-stone/70">
+                                Heritage Restoration Image Placeholder
+                            </span>
+                        </div>
+                    </div>
+                </section>
+
                 {/* INVESTMENT TIMELINE */}
                 <section className="p-8 md:p-20" id="timeline">
                     <div className="flex flex-col items-center mb-16">
@@ -478,7 +546,7 @@ function SantosSite({ onOpenInquire }) {
                             <div className="md:w-1/2 md:pr-12 text-left md:text-right pl-12 md:pl-0 mb-2 md:mb-0">
                                 <span className="text-primary font-bold text-lg">2024</span>
                                 <h4 className="font-serif text-xl text-charcoal">Acquisition &amp; Security</h4>
-                                <p className="text-xs text-stone mt-1">
+                                <p className="text-sm text-stone font-light leading-relaxed mt-2">
                                     The cornerstone is secured. Asset-backed investment and strategic site control established.
                                 </p>
                             </div>
@@ -493,7 +561,7 @@ function SantosSite({ onOpenInquire }) {
                             <div className="md:w-1/2 md:pl-12 text-left pl-12 md:pl-0 mb-2 md:mb-0">
                                 <span className="text-charcoal font-bold text-lg">2025</span>
                                 <h4 className="font-serif text-xl text-charcoal">Architectural Refinement</h4>
-                                <p className="text-xs text-stone mt-1">
+                                <p className="text-sm text-stone font-light leading-relaxed mt-2">
                                     Finalizing the design dialogue between the heritage façade and contemporary interior volumes.
                                 </p>
                             </div>
@@ -508,7 +576,7 @@ function SantosSite({ onOpenInquire }) {
                             <div className="md:w-1/2 md:pr-12 text-left md:text-right pl-12 md:pl-0 mb-2 md:mb-0">
                                 <span className="text-primary font-bold text-lg">2026</span>
                                 <h4 className="font-serif text-xl text-primary">Cultural Inauguration</h4>
-                                <p className="text-xs text-stone mt-1">
+                                <p className="text-sm text-stone font-light leading-relaxed mt-2">
                                     Grand opening of The Maison. The brand begins operation, establishing the hospitality
                                     philosophy.
                                 </p>
@@ -524,7 +592,7 @@ function SantosSite({ onOpenInquire }) {
                             <div className="md:w-1/2 md:pl-12 text-left pl-12 md:pl-0 mb-2 md:mb-0">
                                 <span className="text-stone/80 font-bold text-lg">2027</span>
                                 <h4 className="font-serif text-xl text-stone">Structural Restoration</h4>
-                                <p className="text-xs text-stone/80 mt-1">
+                                <p className="text-sm text-stone/80 font-light leading-relaxed mt-2">
                                     Commencement of the Riverside Landmark restoration.
                                 </p>
                             </div>
@@ -539,7 +607,7 @@ function SantosSite({ onOpenInquire }) {
                             <div className="md:w-1/2 md:pr-12 text-left md:text-right pl-12 md:pl-0 mb-2 md:mb-0">
                                 <span className="text-primary font-bold text-lg">2029</span>
                                 <h4 className="font-serif text-xl text-primary">The Grand Opening</h4>
-                                <p className="text-xs text-stone/80 mt-1">
+                                <p className="text-sm text-stone/80 font-light leading-relaxed mt-2">
                                     Unveiling of the 27-suite estate and private gardens. Full realization of the asset value.
                                 </p>
                             </div>
