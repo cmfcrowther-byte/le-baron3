@@ -2,6 +2,7 @@ import React, { useLayoutEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import LisboaMap from './Lisboa-SuperLight.svg?react';
+import facadeDesaturated from './facade-desaturated.jpeg';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -246,26 +247,26 @@ function SantosSite({ onOpenInquire }) {
                                     <span className="copy-eyebrow flex items-center gap-4">
                                         Phase I <span className="h-[1px] w-12 bg-stone-light/40" />
                                     </span>
-                                    <h3 className="text-charcoal font-serif text-2xl md:text-3xl lg:text-4xl font-light">
+                                    <h3 className="copy-title-md">
                                         The Private Maison
                                     </h3>
-                                    <p className="text-[10px] uppercase tracking-widest text-stone/70">Operational 2026</p>
+                                    <p className="copy-caption">Operational 2026</p>
                                 </div>
                                 <p className="copy-body">
                                     An intimate flagship townhouse serving as the project&apos;s cultural anchor. Before the
                                     hotel&apos;s inauguration, this venue operates as a private members&apos; salon—establishing
                                     the brand&apos;s exclusivity and defining the district&apos;s new social hierarchy.
                                 </p>
-                                <ul className="space-y-2 text-xs md:text-sm text-stone font-light">
+                                <ul className="space-y-2">
                                     <li className="flex gap-2">
                                         <span className="text-primary mt-[2px]">•</span>
-                                        <span>
+                                        <span className="copy-list">
                                             <span className="font-semibold text-charcoal">Status:</span> In Development
                                         </span>
                                     </li>
                                     <li className="flex gap-2">
                                         <span className="text-primary mt-[2px]">•</span>
-                                        <span>
+                                        <span className="copy-list">
                                             <span className="font-semibold text-charcoal">Role:</span> Brand Equity &amp;
                                             Cash Flow
                                         </span>
@@ -279,27 +280,27 @@ function SantosSite({ onOpenInquire }) {
                                     <span className="copy-eyebrow flex items-center gap-4">
                                         Phase II <span className="h-[1px] w-12 bg-stone-light/40" />
                                     </span>
-                                    <h3 className="text-charcoal font-serif text-2xl md:text-3xl lg:text-4xl font-light">
+                                    <h3 className="copy-title-md">
                                         The Heritage Landmark
                                     </h3>
-                                    <p className="text-[10px] uppercase tracking-widest text-stone/70">Completing 2029</p>
+                                    <p className="copy-caption">Completing 2029</p>
                                 </div>
                                 <p className="copy-body">
                                     The meticulous restoration of a grand 19th-century palace fronting the Tagus River. Anchored
                                     by 27 suites and extensive private gardens, this asset scales the Maison&apos;s intimacy into a
                                     permanent, trophy hospitality destination.
                                 </p>
-                                <ul className="space-y-2 text-xs md:text-sm text-stone font-light">
+                                <ul className="space-y-2">
                                     <li className="flex gap-2">
                                         <span className="text-primary mt-[2px]">•</span>
-                                        <span>
+                                        <span className="copy-list">
                                             <span className="font-semibold text-charcoal">Status:</span> Architectural
                                             Planning
                                         </span>
                                     </li>
                                     <li className="flex gap-2">
                                         <span className="text-primary mt-[2px]">•</span>
-                                        <span>
+                                        <span className="copy-list">
                                             <span className="font-semibold text-charcoal">Role:</span> Asset Value &amp;
                                             Legacy
                                         </span>
@@ -309,10 +310,7 @@ function SantosSite({ onOpenInquire }) {
                         </div>
 
                         <div className="pt-[10.5rem] pb-16">
-                            <h3
-                                id="narrative-tagline"
-                                className="font-serif text-2xl md:text-3xl text-charcoal font-light tracking-wide text-center"
-                            >
+                            <h3 id="narrative-tagline" className="copy-tagline">
                                 One Philosophy. Two Scales. The Townhouse establishes the pulse; the Landmark secures the
                                 legacy.
                             </h3>
@@ -341,29 +339,29 @@ function SantosSite({ onOpenInquire }) {
                             galleries, the district commands the capital&apos;s highest demand while retaining a barrier to
                             entry that protects asset value.
                         </p>
-                        <ul className="space-y-3 text-stone text-sm font-light">
+                        <ul className="space-y-3">
                             <li className="flex gap-2">
                                 <span className="text-primary mt-[2px]">•</span>
-                                <span>
+                                <span className="copy-list">
                                     <span className="font-semibold text-charcoal">Proximity:</span> 2 Minutes to Riverside
                                     Promenade
                                 </span>
                             </li>
                             <li className="flex gap-2">
                                 <span className="text-primary mt-[2px]">•</span>
-                                <span>
+                                <span className="copy-list">
                                     <span className="font-semibold text-charcoal">Connectivity:</span> 20 Minutes to
                                     International Airport
                                 </span>
                             </li>
                             <li className="flex gap-2">
                                 <span className="text-primary mt-[2px]">•</span>
-                                <span>
+                                <span className="copy-list">
                                     <span className="font-semibold text-charcoal">Context:</span> The Diplomatic Quarter
                                 </span>
                             </li>
                         </ul>
-                        <div className="mt-12 flex gap-4 text-[10px] uppercase tracking-widest text-stone/60">
+                        <div className="mt-12 flex gap-4 copy-label">
                             <span>Lat: 38.7046</span>
                             <span>Long: -9.1621</span>
                         </div>
@@ -484,13 +482,13 @@ function SantosSite({ onOpenInquire }) {
 
                 {/* HERITAGE RESTORATION */}
                 <section className="mt-12 md:mt-20 py-20 md:py-24 px-8 md:px-20 bg-paper">
-                    <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 items-start">
+                    <div className="max-w-5xl mx-auto space-y-10">
                         <div className="space-y-6">
-                            <span className="text-primary text-[10px] font-bold uppercase tracking-[0.4em] flex items-center gap-4">
+                            <span className="copy-eyebrow flex items-center gap-4">
                                 The Heritage Restoration <span className="h-[1px] w-12 bg-stone-light/40" />
                             </span>
-                            <h2 className="text-charcoal font-serif text-3xl md:text-4xl font-light">
-                                A Palatial Resurrection
+                            <h2 className="copy-section-title">
+                                Architectural Stewardship
                             </h2>
                             <p className="copy-body">
                                 Standing as a testament to Lisbon&apos;s aristocratic past, the existing structure presents an
@@ -499,42 +497,48 @@ function SantosSite({ onOpenInquire }) {
                                 resurrect the palatial grandeur of the 19th century while discreetly integrating the technological
                                 infrastructure required of a modern, ultra-luxury hospitality asset.
                             </p>
-                            <ul className="mt-4 space-y-2 text-stone text-sm md:text-base font-light leading-relaxed">
-                                <li className="flex gap-2">
-                                    <span className="text-primary mt-[2px]">•</span>
-                                    <span>
-                                        <span className="font-semibold text-charcoal">The Façade:</span> Preserving the original
-                                        aristocratic detailing and streetscape rhythm.
-                                    </span>
-                                </li>
-                                <li className="flex gap-2">
-                                    <span className="text-primary mt-[2px]">•</span>
-                                    <span>
-                                        <span className="font-semibold text-charcoal">The Volume:</span> Restoring the exceptional
-                                        3.8m ceiling heights that define true palatial living.
-                                    </span>
-                                </li>
-                                <li className="flex gap-2">
-                                    <span className="text-primary mt-[2px]">•</span>
-                                    <span>
-                                        <span className="font-semibold text-charcoal">The Dialogue:</span> A meticulous balance of
-                                        strict historical preservation and contemporary execution.
-                                    </span>
-                                </li>
-                            </ul>
                         </div>
-                        <div className="relative w-full h-full min-h-[260px] bg-stone-light/30 rounded-sm overflow-hidden flex items-center justify-center">
-                            <span className="text-[11px] tracking-[0.2em] uppercase text-stone/70">
-                                Heritage Restoration Image Placeholder
-                            </span>
+
+                        <div className="w-full flex justify-center">
+                            <div className="w-[60vw] bg-stone-light/20 relative overflow-hidden rounded-sm flex items-center justify-center">
+                                <img
+                                    src={facadeDesaturated}
+                                    alt="Desaturated façade of the restored Lisbon palace"
+                                    className="w-full h-full object-contain hover:scale-[1.03] transition-transform duration-700"
+                                />
+                            </div>
                         </div>
+
+                        <ul className="mt-4 space-y-2">
+                            <li className="flex gap-2">
+                                <span className="text-primary mt-[2px]">•</span>
+                                <span className="copy-list">
+                                    <span className="font-semibold text-charcoal">The Façade:</span> Preserving the original
+                                    aristocratic detailing and streetscape rhythm.
+                                </span>
+                            </li>
+                            <li className="flex gap-2">
+                                <span className="text-primary mt-[2px]">•</span>
+                                <span className="copy-list">
+                                    <span className="font-semibold text-charcoal">The Volume:</span> Restoring the exceptional
+                                    3.8m ceiling heights that define true palatial living.
+                                </span>
+                            </li>
+                            <li className="flex gap-2">
+                                <span className="text-primary mt-[2px]">•</span>
+                                <span className="copy-list">
+                                    <span className="font-semibold text-charcoal">The Dialogue:</span> A meticulous balance of
+                                    strict historical preservation and contemporary execution.
+                                </span>
+                            </li>
+                        </ul>
                     </div>
                 </section>
 
                 {/* INVESTMENT TIMELINE */}
                 <section className="p-8 md:p-20" id="timeline">
                     <div className="flex flex-col items-center mb-16">
-                        <h2 className="font-serif text-3xl md:text-4xl text-charcoal mb-4">Investment Timeline</h2>
+                        <h2 className="copy-section-title mb-4">Investment Timeline</h2>
                         <div className="w-16 h-[1px] bg-primary" />
                     </div>
 
@@ -544,76 +548,76 @@ function SantosSite({ onOpenInquire }) {
                         {/* 2024 */}
                         <div className="timeline-reveal relative flex flex-col md:flex-row items-center justify-between mb-16 group">
                             <div className="md:w-1/2 md:pr-12 text-left md:text-right pl-12 md:pl-0 mb-2 md:mb-0">
-                                <span className="text-primary font-bold text-lg">2024</span>
-                                <h4 className="font-serif text-xl text-charcoal">Acquisition &amp; Security</h4>
-                                <p className="text-sm text-stone font-light leading-relaxed mt-2">
+                                <span className="copy-timeline-year text-primary">2024</span>
+                                <h4 className="copy-title-sm">Acquisition &amp; Security</h4>
+                                <p className="copy-body mt-2">
                                     The cornerstone is secured. Asset-backed investment and strategic site control established.
                                 </p>
                             </div>
                             <div className="absolute left-4 md:left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-charcoal ring-4 ring-paper group-hover:scale-125 transition-transform" />
                             <div className="md:w-1/2 md:pl-12 pl-12">
-                                <span className="text-[10px] uppercase tracking-widest text-stone/60">Phase I</span>
+                                <span className="copy-caption">Phase I</span>
                             </div>
                         </div>
 
                         {/* 2025 */}
                         <div className="timeline-reveal relative flex flex-col md:flex-row-reverse items-center justify-between mb-16 group">
                             <div className="md:w-1/2 md:pl-12 text-left pl-12 md:pl-0 mb-2 md:mb-0">
-                                <span className="text-charcoal font-bold text-lg">2025</span>
-                                <h4 className="font-serif text-xl text-charcoal">Architectural Refinement</h4>
-                                <p className="text-sm text-stone font-light leading-relaxed mt-2">
+                                <span className="copy-timeline-year text-charcoal">2025</span>
+                                <h4 className="copy-title-sm">Architectural Refinement</h4>
+                                <p className="copy-body mt-2">
                                     Finalizing the design dialogue between the heritage façade and contemporary interior volumes.
                                 </p>
                             </div>
                             <div className="absolute left-4 md:left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-stone-light ring-4 ring-paper group-hover:scale-125 transition-transform" />
                             <div className="md:w-1/2 md:pr-12 pl-12 text-left md:text-right">
-                                <span className="text-[10px] uppercase tracking-widest text-stone/60">Phase II</span>
+                                <span className="copy-caption">Phase II</span>
                             </div>
                         </div>
 
                         {/* 2026 */}
                         <div className="timeline-reveal relative flex flex-col md:flex-row items-center justify-between mb-16 group">
                             <div className="md:w-1/2 md:pr-12 text-left md:text-right pl-12 md:pl-0 mb-2 md:mb-0">
-                                <span className="text-primary font-bold text-lg">2026</span>
-                                <h4 className="font-serif text-xl text-primary">Cultural Inauguration</h4>
-                                <p className="text-sm text-stone font-light leading-relaxed mt-2">
+                                <span className="copy-timeline-year text-primary">2026</span>
+                                <h4 className="copy-title-sm text-primary">Cultural Inauguration</h4>
+                                <p className="copy-body mt-2">
                                     Grand opening of The Maison. The brand begins operation, establishing the hospitality
                                     philosophy.
                                 </p>
                             </div>
                             <div className="absolute left-4 md:left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-stone-light ring-4 ring-paper group-hover:scale-125 transition-transform" />
                             <div className="md:w-1/2 md:pl-12 pl-12">
-                                <span className="text-[10px] uppercase tracking-widest text-stone/60">Phase III</span>
+                                <span className="copy-caption">Phase III</span>
                             </div>
                         </div>
 
                         {/* 2027 */}
                         <div className="timeline-reveal relative flex flex-col md:flex-row-reverse items-center justify-between mb-16 group">
                             <div className="md:w-1/2 md:pl-12 text-left pl-12 md:pl-0 mb-2 md:mb-0">
-                                <span className="text-stone/80 font-bold text-lg">2027</span>
-                                <h4 className="font-serif text-xl text-stone">Structural Restoration</h4>
-                                <p className="text-sm text-stone/80 font-light leading-relaxed mt-2">
+                                <span className="copy-timeline-year text-stone/80">2027</span>
+                                <h4 className="copy-title-sm text-stone">Structural Restoration</h4>
+                                <p className="copy-body-muted mt-2">
                                     Commencement of the Riverside Landmark restoration.
                                 </p>
                             </div>
                             <div className="absolute left-4 md:left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-stone-light ring-4 ring-paper group-hover:scale-125 transition-transform" />
                             <div className="md:w-1/2 md:pr-12 pl-12 text-left md:text-right">
-                                <span className="text-[10px] uppercase tracking-widest text-stone/40">Phase IV</span>
+                                <span className="copy-caption text-stone/60">Phase IV</span>
                             </div>
                         </div>
 
                         {/* 2029 */}
                         <div className="timeline-reveal relative flex flex-col md:flex-row items-center justify-between group">
                             <div className="md:w-1/2 md:pr-12 text-left md:text-right pl-12 md:pl-0 mb-2 md:mb-0">
-                                <span className="text-primary font-bold text-lg">2029</span>
-                                <h4 className="font-serif text-xl text-primary">The Grand Opening</h4>
-                                <p className="text-sm text-stone/80 font-light leading-relaxed mt-2">
+                                <span className="copy-timeline-year text-primary">2029</span>
+                                <h4 className="copy-title-sm text-primary">The Grand Opening</h4>
+                                <p className="copy-body-muted mt-2">
                                     Unveiling of the 27-suite estate and private gardens. Full realization of the asset value.
                                 </p>
                             </div>
                             <div className="absolute left-4 md:left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-primary ring-4 ring-paper group-hover:scale-125 transition-transform" />
                             <div className="md:w-1/2 md:pl-12 pl-12">
-                                <span className="text-[10px] uppercase tracking-widest text-stone/40">Phase V</span>
+                                <span className="copy-caption text-stone/60">Phase V</span>
                             </div>
                         </div>
                     </div>

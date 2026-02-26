@@ -123,7 +123,9 @@ body {
     border-top: 1px solid #d1cfc7;
 }
 
+/* ========== SINGLE SOURCE OF TRUTH: TYPOGRAPHY ========== */
 @layer components {
+    /* Body copy */
     .copy-body {
         @apply text-stone text-sm md:text-base font-light leading-relaxed;
     }
@@ -132,11 +134,70 @@ body {
         @apply text-stone/80 text-sm md:text-base font-light leading-relaxed;
     }
 
+    /* Eyebrow / overline above section titles */
     .copy-eyebrow {
         @apply text-primary text-[10px] font-bold uppercase tracking-[0.4em];
     }
 
+    /* Main section title (e.g. "Provenance & Lineage", "The Enclave") */
     .copy-section-title {
         @apply font-serif text-charcoal text-3xl md:text-4xl font-light;
+    }
+
+    /* Subsection title (e.g. "The Private Maison", "A Palatial Resurrection") */
+    .copy-title-md {
+        @apply font-serif text-charcoal text-2xl md:text-3xl font-light;
+    }
+
+    /* Card/entry title (e.g. "Miki Momén", "The Origin", timeline phase titles) */
+    .copy-title-sm {
+        @apply font-serif text-charcoal text-xl md:text-2xl font-light;
+    }
+
+    /* Caption: dates, phase labels (e.g. "Operational 2026", "Phase I") */
+    .copy-caption {
+        @apply text-[10px] uppercase tracking-widest text-stone/70;
+    }
+
+    /* Small label (e.g. "Section I", timeline right-column labels) */
+    .copy-label {
+        @apply text-[11px] md:text-xs uppercase tracking-widest text-stone/60;
+    }
+
+    /* List item text (same visual weight as body) */
+    .copy-list {
+        @apply text-stone text-sm md:text-base font-light leading-relaxed;
+    }
+
+    /* Timeline year/number (e.g. "1755", "2024") */
+    .copy-timeline-year {
+        @apply font-bold text-lg;
+    }
+
+    /* Centered tagline (e.g. narrative tagline) */
+    .copy-tagline {
+        @apply font-serif text-2xl md:text-3xl text-charcoal font-light tracking-wide text-center;
+    }
+
+    /* Subsection heading (e.g. "Founding Principals") */
+    .copy-subsection-head {
+        @apply text-[11px] font-bold uppercase tracking-[0.3em] text-stone;
+    }
+
+    /* Nav & footer (for consistency; optional use) */
+    .copy-nav-brand {
+        @apply font-serif text-xl md:text-2xl text-charcoal uppercase tracking-[0.18em];
+    }
+
+    .copy-nav-link {
+        @apply text-[11px] uppercase tracking-[0.15em] text-stone leading-none;
+    }
+
+    .copy-footer-tagline {
+        @apply font-serif text-2xl md:text-3xl lg:text-4xl leading-relaxed;
+    }
+
+    .copy-footer-meta {
+        @apply text-[10px] text-white/50;
     }
 }

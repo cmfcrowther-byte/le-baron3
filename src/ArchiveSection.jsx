@@ -38,13 +38,13 @@ export default function ArchiveSection() {
         <main className="w-full max-w-[min(1440px,100%)] mx-auto bg-paper">
             <section className="pt-[9.6rem] pb-24 px-8 md:px-20" id="timeline">
                 <div className="max-w-4xl mx-auto mb-24 space-y-6">
-                    <span className="text-primary text-[10px] font-bold uppercase tracking-[0.4em] flex items-center gap-4">
+                    <span className="copy-eyebrow flex items-center gap-4">
                         The Archive <span className="h-[1px] w-12 bg-stone-light/40" />
                     </span>
-                    <h2 className="text-charcoal font-serif text-3xl md:text-4xl lg:text-5xl font-light">
+                    <h2 className="copy-section-title">
                         Provenance &amp; Lineage
                     </h2>
-                    <p className="text-stone text-sm md:text-base font-light leading-relaxed tracking-wide max-w-3xl mt-10 mb-20">
+                    <p className="copy-body max-w-3xl mt-10 mb-20">
                         A chronological record of how Santos-o-Velho evolved from a post-seismic refuge for nobility
                         into Lisbon&apos;s most finite enclave of heritage estates.
                     </p>
@@ -56,15 +56,15 @@ export default function ArchiveSection() {
                     {/* 1755 – The Origin */}
                     <div className="timeline-reveal relative flex flex-col md:flex-row items-start justify-start md:gap-10 mb-16 group">
                         <div className="md:w-1/3 text-left pl-6 md:pl-0 mb-4 md:mb-0">
-                            <span className="text-stone/60 font-bold text-lg">1755</span>
-                            <h4 className="font-serif text-xl text-charcoal">The Origin</h4>
+                            <span className="copy-timeline-year text-stone/60">1755</span>
+                            <h4 className="copy-title-sm">The Origin</h4>
                         </div>
                         <div className="hidden md:block absolute left-[26%] -translate-x-1/2 w-3 h-3 rounded-full bg-stone-light ring-4 ring-paper group-hover:scale-125 transition-transform" />
                         <div className="md:w-1/2 max-w-md md:pl-0 pl-6">
-                            <p className="text-[11px] md:text-xs uppercase tracking-widest text-stone/60">
+                            <p className="copy-label">
                                 A Noble Refuge
                             </p>
-                            <p className="text-stone text-sm md:text-base font-light leading-relaxed tracking-wide mt-2">
+                            <p className="copy-body mt-2">
                                 Following the 1755 earthquake, Santos-o-Velho became the preferred sanctuary for the
                                 Portuguese aristocracy. While the lower city was rebuilt in the Pombaline grid, this
                                 enclave remained a rare bastion of original estates—a neighborhood defined not by
@@ -76,15 +76,15 @@ export default function ArchiveSection() {
                     {/* 18th C. – The Foundation */}
                     <div className="timeline-reveal relative flex flex-col md:flex-row items-start justify-start md:gap-10 mb-16 group">
                         <div className="md:w-1/3 text-left pl-6 md:pl-0 mb-4 md:mb-0">
-                            <span className="text-stone/60 font-bold text-lg">18th C.</span>
-                            <h4 className="font-serif text-xl text-charcoal">The Foundation</h4>
+                            <span className="copy-timeline-year text-stone/60">18th C.</span>
+                            <h4 className="copy-title-sm">The Foundation</h4>
                         </div>
                         <div className="hidden md:block absolute left-[26%] -translate-x-1/2 w-3 h-3 rounded-full bg-stone-light ring-4 ring-paper group-hover:scale-125 transition-transform" />
                         <div className="md:w-1/2 max-w-md md:pl-0 pl-6">
-                            <p className="text-[11px] md:text-xs uppercase tracking-widest text-stone/60">
+                            <p className="copy-label">
                                 Architectural Permanence
                             </p>
-                            <p className="text-stone text-sm md:text-base font-light leading-relaxed tracking-wide mt-2">
+                            <p className="copy-body mt-2">
                                 The district rests upon a geological shelf that spared it from the seismic destruction
                                 of the 18th century. Consequently, it remains one of the few enclaves in Lisbon where
                                 the pre-earthquake architectural fabric survives—offering a tactile connection to the
@@ -96,15 +96,15 @@ export default function ArchiveSection() {
                     {/* 1850s – The Monarchy */}
                     <div className="timeline-reveal relative flex flex-col md:flex-row items-start justify-start md:gap-10 mb-16 group">
                         <div className="md:w-1/3 text-left pl-6 md:pl-0 mb-4 md:mb-0">
-                            <span className="text-stone/60 font-bold text-lg">1850s</span>
-                            <h4 className="font-serif text-xl text-charcoal">The Monarchy</h4>
+                            <span className="copy-timeline-year text-stone/60">1850s</span>
+                            <h4 className="copy-title-sm">The Monarchy</h4>
                         </div>
                         <div className="hidden md:block absolute left-[26%] -translate-x-1/2 w-3 h-3 rounded-full bg-stone-light ring-4 ring-paper group-hover:scale-125 transition-transform" />
                         <div className="md:w-1/2 max-w-md md:pl-0 pl-6">
-                            <p className="text-[11px] md:text-xs uppercase tracking-widest text-stone/60">
+                            <p className="copy-label">
                                 The Diplomatic Quarter
                             </p>
-                            <p className="text-stone text-sm md:text-base font-light leading-relaxed tracking-wide mt-2">
+                            <p className="copy-body mt-2">
                                 As the gateway to Lapa, Santos-o-Velho thrived within the immediate orbit of the
                                 monarchy. With the Royal Court established at the nearby Palácio das Necessidades, the
                                 high nobility commissioned &quot;river-view&quot; estates here—securing a strategic
@@ -116,15 +116,15 @@ export default function ArchiveSection() {
                     {/* 19th C. – The Legacy */}
                     <div className="timeline-reveal relative flex flex-col md:flex-row items-start justify-start md:gap-10 group">
                         <div className="md:w-1/3 text-left pl-6 md:pl-0 mb-4 md:mb-0">
-                            <span className="text-stone/60 font-bold text-lg">19th C.</span>
-                            <h4 className="font-serif text-xl text-charcoal">The Legacy</h4>
+                            <span className="copy-timeline-year text-stone/60">19th C.</span>
+                            <h4 className="copy-title-sm">The Legacy</h4>
                         </div>
                         <div className="hidden md:block absolute left-[26%] -translate-x-1/2 w-3 h-3 rounded-full bg-stone-light ring-4 ring-paper group-hover:scale-125 transition-transform" />
                         <div className="md:w-1/2 max-w-md md:pl-0 pl-6">
-                            <p className="text-[11px] md:text-xs uppercase tracking-widest text-stone/60">
+                            <p className="copy-label">
                                 The Estate
                             </p>
-                            <p className="text-stone text-sm md:text-base font-light leading-relaxed tracking-wide mt-2">
+                            <p className="copy-body mt-2">
                                 Originally the residence of [Insert Family Name/Title], the 19th-century structure
                                 stands as a testament to this diplomatic heritage. Its Andar Nobre (Noble Floor) and
                                 600m² of private walled gardens represent a scale of residential architecture that is

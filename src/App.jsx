@@ -37,6 +37,10 @@ const FADE_TO_WHITE_END = "4500px top";
 
 const ScrollMeter = () => {
     const [metrics, setMetrics] = useState({ percent: 0, pixels: 0 });
+    const [fps, setFps] = useState(0);
+    const [loadTime, setLoadTime] = useState(null);
+
+    // Scroll metrics
     useEffect(() => {
         const handleScroll = () => {
             const total = document.documentElement.scrollHeight - window.innerHeight;
@@ -44,17 +48,73 @@ const ScrollMeter = () => {
             let percent = total > 0 ? (current / total) * 100 : 0;
             setMetrics({ percent: Math.round(Math.max(0, Math.min(percent, 100))), pixels: Math.round(current) });
         };
+        handleScroll();
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
+
+    // Approximate page load time (seconds since navigation start when this mounts)
+    useEffect(() => {
+        try {
+            const timing = performance.timing;
+            if (timing && timing.navigationStart) {
+                const now = Date.now();
+                const loadSeconds = (now - timing.navigationStart) / 1000;
+                setLoadTime(loadSeconds);
+            } else if (performance.timeOrigin) {
+                const loadSeconds = (performance.now()) / 1000;
+                setLoadTime(loadSeconds);
+            }
+        } catch {
+            setLoadTime(null);
+        }
+    }, []);
+
+    // FPS counter
+    useEffect(() => {
+        let frameCount = 0;
+        let lastTime = performance.now();
+        let lastFpsUpdate = lastTime;
+        let rafId;
+
+        const loop = (time) => {
+            frameCount += 1;
+            const delta = time - lastFpsUpdate;
+            if (delta >= 1000) {
+                const currentFps = (frameCount * 1000) / delta;
+                setFps(Math.round(currentFps));
+                frameCount = 0;
+                lastFpsUpdate = time;
+            }
+            rafId = requestAnimationFrame(loop);
+        };
+
+        rafId = requestAnimationFrame(loop);
+        return () => cancelAnimationFrame(rafId);
+    }, []);
+
     return (
-        <div style={{
-            position: 'fixed', top: 20, right: 20, zIndex: 9999,
-            backgroundColor: 'rgba(0,0,0,0.85)', color: '#00FF00',
-            padding: '10px 15px', borderRadius: '6px', fontFamily: 'monospace',
-            fontWeight: 'bold', fontSize: '14px', pointerEvents: 'none', whiteSpace: 'pre'
-        }}>
-            SCROLL: {metrics.percent}%{"\n"}PIXELS: {metrics.pixels}px
+        <div
+            style={{
+                position: 'fixed',
+                top: 20,
+                right: 20,
+                zIndex: 9999,
+                backgroundColor: 'rgba(0,0,0,0.85)',
+                color: '#00FF00',
+                padding: '10px 15px',
+                borderRadius: '6px',
+                fontFamily: 'monospace',
+                fontWeight: 'bold',
+                fontSize: '14px',
+                pointerEvents: 'none',
+                whiteSpace: 'pre',
+            }}
+        >
+            SCROLL: {metrics.percent}%{"\n"}
+            PIXELS: {metrics.pixels}px{"\n"}
+            LOAD: {loadTime != null ? loadTime.toFixed(2) : '...'}s{"\n"}
+            FPS: {fps || '...'}
         </div>
     );
 };
