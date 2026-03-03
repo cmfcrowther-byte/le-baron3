@@ -2,7 +2,7 @@
   "name": "hotel-lisbon",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://cmfcrowther-byte.github.io/le-baron2/",
+  "homepage": "https://cmfcrowther-byte.github.io/le-baron3/",
   "type": "module",
   "scripts": {
     "dev": "vite",

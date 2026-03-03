@@ -8,13 +8,14 @@ export default defineConfig({
     react(),
     svgr()
   ],
-  base: "/le-baron2/", // 👈 IMPORTANT: This must match your GitHub Repo name!
+  base: "/le-baron3/", // 👈 Must match your GitHub repo name (le-baron3)
   build: {
     rollupOptions: {
       input: {
         main: 'index.html',
         stewardship: 'stewardship.html',
         archive: 'archive.html',
+        admin: 'admin.html',
       },
     },
   },

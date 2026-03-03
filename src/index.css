@@ -29,6 +29,8 @@ body {
     width: 80%;
     /* We put the 80% back here for desktop */
     margin: 0 auto;
+    /* Desktop only: nudge the whole illustration down a bit */
+    transform: translateY(28px);
 }
 
 /* --- MOBILE FIXES (The "Sky Buffer" Solution) --- */
@@ -46,19 +48,18 @@ body {
     }
 
     .hotel-vector {
-        /* 🔴 1. LOCK HEIGHT */
-        height: 100svh !important;
+        /* 🔴 1. LOCK HEIGHT (zoomed out a touch more on mobile) */
+        height: 72svh !important;
 
-        /* 2. PIN TO BOTTOM */
+        /* 2. CENTER VERTICALLY IN VIEWPORT */
         position: fixed !important;
-        bottom: 0 !important;
-        top: auto !important;
+        top: 50% !important;
+        bottom: auto !important;
 
-        /* 3. CENTER */
+        /* 3. CENTER HORIZONTALLY, SLIGHTLY BELOW VERTICAL CENTER */
         left: 50% !important;
-        transform: translateX(-50%) !important;
+        transform: translate(-50%, -42%) !important;
         width: auto !important;
-        min-width: 180vh;
 
         /* 4. SOLIDITY (No animations) */
         z-index: 0;

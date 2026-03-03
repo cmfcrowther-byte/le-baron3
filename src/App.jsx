@@ -120,42 +120,121 @@ const ScrollMeter = () => {
 };
 
 const NavBar = ({ onOpenInquire }) => {
+    const [mobileOpen, setMobileOpen] = useState(false);
+    const navRef = useRef(null);
+    const toggleMobile = () => setMobileOpen((prev) => !prev);
+
+    // Mobile only: close menu when clicking outside it
+    useEffect(() => {
+        if (!mobileOpen) return;
+        const handleClickOutside = (e) => {
+            if (navRef.current && !navRef.current.contains(e.target)) {
+                setMobileOpen(false);
+            }
+        };
+        document.addEventListener('click', handleClickOutside);
+        return () => document.removeEventListener('click', handleClickOutside);
+    }, [mobileOpen]);
+
     return (
-        <nav className="fixed top-0 left-0 w-full z-[1000] bg-paper/90 backdrop-blur border-b border-stone-light/60">
-            <div className="w-full max-w-[min(1440px,100%)] mx-auto px-6 h-14 md:h-16 flex items-center justify-between">
-                <div className="flex items-center">
-                    <h2 className="font-serif text-xl md:text-2xl text-charcoal uppercase tracking-[0.18em]">
-                        <a href="/le-baron2/#santos-site">Trophée Immobilier</a>
-                    </h2>
-                </div>
-                <nav className="hidden md:flex gap-8 items-baseline ml-auto mr-8 text-[11px] uppercase tracking-[0.15em] text-stone leading-none">
-                    <a
-                        className="group relative inline-block hover:text-charcoal transition-colors leading-none"
-                        href="/le-baron2/archive.html"
-                    >
-                        The Archive
-                        <span className="absolute bottom-0 left-0 w-full h-[1px] bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
-                    </a>
-                    <a
-                        className="group relative inline-block hover:text-charcoal transition-colors leading-none"
-                        href="/le-baron2/stewardship.html"
-                    >
-                        The Stewardship
-                        <span className="absolute bottom-0 left-0 w-full h-[1px] bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
-                    </a>
-                </nav>
-                <div className="hidden md:flex items-baseline gap-4">
+        <>
+            <nav ref={navRef} className="fixed top-0 left-0 w-full z-[1000] bg-paper/90 backdrop-blur border-b border-stone-light/60">
+                <div className="w-full max-w-[min(1440px,100%)] mx-auto px-6 h-14 md:h-16 flex items-center justify-between">
+                    <div className="flex items-center">
+                        <h2 className="font-serif text-xl md:text-2xl text-charcoal uppercase tracking-[0.18em]">
+                            <a href="/le-baron2/#santos-site">
+                                <span className="md:hidden">T.I.</span>
+                                <span className="hidden md:inline">Trophée Immobilier</span>
+                            </a>
+                        </h2>
+                    </div>
+
+                    {/* Desktop nav */}
+                    <nav className="hidden md:flex gap-8 items-baseline ml-auto mr-8 text-[11px] uppercase tracking-[0.15em] text-stone leading-none">
+                        <a
+                            className="group relative inline-block hover:text-charcoal transition-colors leading-none"
+                            href="/le-baron2/archive.html"
+                        >
+                            The Archive
+                            <span className="absolute bottom-0 left-0 w-full h-[1px] bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+                        </a>
+                        <a
+                            className="group relative inline-block hover:text-charcoal transition-colors leading-none"
+                            href="/le-baron2/stewardship.html"
+                        >
+                            The Stewardship
+                            <span className="absolute bottom-0 left-0 w-full h-[1px] bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+                        </a>
+                    </nav>
+                    <div className="hidden md:flex items-baseline gap-4">
+                        <button
+                            type="button"
+                            className="group relative inline-block text-primary text-[11px] tracking-[0.15em] uppercase leading-none cursor-pointer bg-transparent border-none p-0"
+                            onClick={onOpenInquire}
+                        >
+                            Inquire for Private Consultation
+                            <span className="absolute bottom-0 left-0 w-full h-[1px] bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+                        </button>
+                    </div>
+
+                    {/* Mobile hamburger */}
                     <button
                         type="button"
-                        className="group relative inline-block text-primary text-[11px] tracking-[0.15em] uppercase leading-none cursor-pointer bg-transparent border-none p-0"
-                        onClick={onOpenInquire}
+                        className="md:hidden ml-auto flex flex-col justify-between w-7 h-5 cursor-pointer bg-transparent border-none p-0"
+                        aria-label="Toggle navigation"
+                        onClick={toggleMobile}
                     >
-                        Inquire for Private Consultation
-                        <span className="absolute bottom-0 left-0 w-full h-[1px] bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+                        <span
+                            className={`h-[2px] w-full bg-charcoal transition-transform duration-300 ${
+                                mobileOpen ? 'translate-y-[7px] rotate-45' : ''
+                            }`}
+                        />
+                        <span
+                            className={`h-[2px] w-full bg-charcoal transition-opacity duration-300 ${
+                                mobileOpen ? 'opacity-0' : 'opacity-100'
+                            }`}
+                        />
+                        <span
+                            className={`h-[2px] w-full bg-charcoal transition-transform duration-300 ${
+                                mobileOpen ? '-translate-y-[7px] -rotate-45' : ''
+                            }`}
+                        />
                     </button>
                 </div>
-            </div>
-        </nav>
+
+                {/* Mobile menu */}
+                {mobileOpen && (
+                    <div className="md:hidden border-t border-stone-light/60 bg-paper/95 backdrop-blur">
+                        <div className="px-6 py-4 space-y-3 text-[11px] uppercase tracking-[0.15em] text-stone text-right">
+                            <a
+                                href="/le-baron2/archive.html"
+                                className="block py-1 hover:text-charcoal"
+                                onClick={() => setMobileOpen(false)}
+                            >
+                                The Archive
+                            </a>
+                            <a
+                                href="/le-baron2/stewardship.html"
+                                className="block py-1 hover:text-charcoal"
+                                onClick={() => setMobileOpen(false)}
+                            >
+                                The Stewardship
+                            </a>
+                            <button
+                                type="button"
+                                className="block ml-auto py-1 text-primary text-right text-[11px] uppercase tracking-[0.15em]"
+                                onClick={() => {
+                                    setMobileOpen(false);
+                                    onOpenInquire && onOpenInquire();
+                                }}
+                            >
+                                Inquire for Private Consultation
+                            </button>
+                        </div>
+                    </div>
+                )}
+            </nav>
+        </>
     );
 };
 
@@ -164,8 +243,8 @@ const HotelLayer = () => {
 
     useLayoutEffect(() => {
         const ctx = gsap.context(() => {
-            // --- 1. WINDOW LIGHTS ---
-            const windows = "#windowLights > g";
+            // --- 1. WINDOW LIGHTS --- (children may be <g> or <path> depending on SVG export)
+            const windows = "#windowLights > *";
             gsap.set("#windowLights", { display: "block" });
             gsap.set(windows, { opacity: 0 });
 
@@ -213,6 +292,9 @@ const HotelLayer = () => {
             const leftDoors = ["#onedoor-L-container", "#twodoor-L-container", "#threedoor-L-container"];
             const rightDoors = ["#onedoor-R-container", "#twodoor-R-container", "#threedoor-R-container"];
 
+            // Door lights: fade in as doors open, fade out when scrolling back (luxurious opacity tied to scroll)
+            doorTl.set("#DoorLights", { display: "block", opacity: 0 }, 0);
+            doorTl.to("#DoorLights", { opacity: 1, duration: 0.55, ease: "sine.inOut" }, 0);
             doorTl.to(leftDoors, { scaleX: -1, transformOrigin: "left center", ease: "none" }, 0);
             doorTl.to(rightDoors, { scaleX: -1, transformOrigin: "right center", ease: "none" }, 0);
 
@@ -275,22 +357,16 @@ const HotelLayer = () => {
             <HotelVector
                 className="hotel-vector"
                 style={{
-                    /* 1. LIMIT WIDTH (Already there) */
+                    // Limit width so it never grows beyond design intent
                     maxWidth: '1600px',
-
-                    /* 2. LIMIT HEIGHT (The Fix!) */
-                    /* Never let the building be taller than 85% of the screen */
+                    // Never let the building be taller than the viewport
                     maxHeight: '95vh',
-
-                    /* 3. MAINTAIN ASPECT RATIO */
+                    // Maintain aspect ratio
                     height: 'auto',
                     width: 'auto',
-
-                    /* 4. LAYOUT */
+                    // Layout / centering
                     display: 'block',
-
-                    /* 5. CENTER IT (Crucial if it shrinks) */
-                    margin: '0 auto'
+                    margin: '0 auto',
                 }}
             />
 
@@ -412,7 +488,8 @@ function App() {
         <div id="main-container" style={{ minHeight: '100vh', width: '100%', position: 'relative' }}>
             <NavBar onOpenInquire={openInquire} />
             <SkyBackground start={SKY_START} end={SKY_END} />
-            <ScrollMeter />
+            {/* Debug widget (scroll / pixels / load / fps) retained for quick reactivation */}
+            {/* <ScrollMeter /> */}
             <HotelLayer />
 
             {/* JEEP CONTAINER */}

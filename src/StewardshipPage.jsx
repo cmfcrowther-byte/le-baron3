@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import StewardshipSection from './StewardshipSection';
@@ -6,12 +6,31 @@ import StewardshipSection from './StewardshipSection';
 gsap.registerPlugin(ScrollTrigger);
 
 const StewardshipNavBar = ({ onOpenInquire }) => {
+    const [mobileOpen, setMobileOpen] = useState(false);
+    const navRef = useRef(null);
+    const toggleMobile = () => setMobileOpen((prev) => !prev);
+
+    // Mobile only: close menu when clicking outside it
+    useEffect(() => {
+        if (!mobileOpen) return;
+        const handleClickOutside = (e) => {
+            if (navRef.current && !navRef.current.contains(e.target)) {
+                setMobileOpen(false);
+            }
+        };
+        document.addEventListener('click', handleClickOutside);
+        return () => document.removeEventListener('click', handleClickOutside);
+    }, [mobileOpen]);
+
     return (
-        <nav className="fixed top-0 left-0 w-full z-[1000] bg-paper/90 backdrop-blur border-b border-stone-light/60">
+        <nav ref={navRef} className="fixed top-0 left-0 w-full z-[1000] bg-paper/90 backdrop-blur border-b border-stone-light/60">
             <div className="w-full max-w-[min(1440px,100%)] mx-auto px-6 h-14 md:h-16 flex items-center justify-between">
                 <div className="flex items-center">
                     <h2 className="font-serif text-xl md:text-2xl text-charcoal uppercase tracking-[0.18em]">
-                        <a href="/le-baron2/#santos-site">Trophée Immobilier</a>
+                        <a href="/le-baron2/#santos-site">
+                            <span className="md:hidden">T.I.</span>
+                            <span className="hidden md:inline">Trophée Immobilier</span>
+                        </a>
                     </h2>
                 </div>
                 <nav className="hidden md:flex gap-8 items-baseline ml-auto mr-8 text-[11px] uppercase tracking-[0.15em] text-stone leading-none">
@@ -40,7 +59,63 @@ const StewardshipNavBar = ({ onOpenInquire }) => {
                         <span className="absolute bottom-0 left-0 w-full h-[1px] bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
                     </button>
                 </div>
+
+                {/* Mobile hamburger */}
+                <button
+                    type="button"
+                    className="md:hidden ml-auto flex flex-col justify-between w-7 h-5 cursor-pointer bg-transparent border-none p-0"
+                    aria-label="Toggle navigation"
+                    onClick={toggleMobile}
+                >
+                    <span
+                        className={`h-[2px] w-full bg-charcoal transition-transform duration-300 ${
+                            mobileOpen ? 'translate-y-[7px] rotate-45' : ''
+                        }`}
+                    />
+                    <span
+                        className={`h-[2px] w-full bg-charcoal transition-opacity duration-300 ${
+                            mobileOpen ? 'opacity-0' : 'opacity-100'
+                        }`}
+                    />
+                    <span
+                        className={`h-[2px] w-full bg-charcoal transition-transform duration-300 ${
+                            mobileOpen ? '-translate-y-[7px] -rotate-45' : ''
+                        }`}
+                    />
+                </button>
             </div>
+
+            {/* Mobile menu */}
+            {mobileOpen && (
+                <div className="md:hidden border-t border-stone-light/60 bg-paper/95 backdrop-blur">
+                    <div className="px-6 py-4 space-y-3 text-[11px] uppercase tracking-[0.15em] text-stone text-right">
+                        <a
+                            href="/le-baron2/archive.html"
+                            className="block py-1 hover:text-charcoal"
+                            onClick={() => setMobileOpen(false)}
+                        >
+                            The Archive
+                        </a>
+                        <a
+                            href="/le-baron2/stewardship.html"
+                            className="block py-1 hover:text-charcoal"
+                            onClick={() => setMobileOpen(false)}
+                        >
+                            The Stewardship
+                        </a>
+                        <button
+                            type="button"
+                            className="block ml-auto py-1 text-primary text-right text-[11px] uppercase tracking-[0.15em]"
+                            onClick={() => {
+                                setMobileOpen(false);
+                                onOpenInquire && onOpenInquire();
+                            }}
+                        >
+                            Inquire for Private Consultation
+                        </button>
+                    </div>
+                </div>
+            )}
         </nav>
     );
 };
@@ -58,12 +133,12 @@ const FooterInquireLink = ({ onOpenInquire }) => {
             {
                 scaleX: 1,
                 transformOrigin: '0% 50%',
-                duration: 0.9,
-                ease: 'power2.out',
+                ease: 'none',
                 scrollTrigger: {
                     trigger: '#footer',
-                    start: 'top 80%',
-                    toggleActions: 'play none none none',
+                    start: 'top 92%',
+                    end: 'top 5%',
+                    scrub: true,
                 },
             },
         );
