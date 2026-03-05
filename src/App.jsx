@@ -360,7 +360,7 @@ const HotelLayer = () => {
                     // Limit width so it never grows beyond design intent
                     maxWidth: '1600px',
                     // Never let the building be taller than the viewport
-                    maxHeight: '95vh',
+                    maxHeight: '95svh',
                     // Maintain aspect ratio
                     height: 'auto',
                     width: 'auto',
@@ -372,7 +372,7 @@ const HotelLayer = () => {
 
             {/* WHITE OVERLAY SCREEN */}
             <div id="white-overlay" style={{
-                position: 'fixed', top: 0, left: 0, width: '100%', height: '100vh',
+                position: 'fixed', top: 0, left: 0, width: '100%', height: '100svh',
                 backgroundColor: '#f1f0ea',
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
                 zIndex: 10,
@@ -485,7 +485,7 @@ function App() {
     }, [isInquireOpen]);
 
     return (
-        <div id="main-container" style={{ minHeight: '100vh', width: '100%', position: 'relative' }}>
+        <div id="main-container" style={{ minHeight: '100svh', width: '100%', position: 'relative' }}>
             <NavBar onOpenInquire={openInquire} />
             <SkyBackground start={SKY_START} end={SKY_END} />
             {/* Debug widget (scroll / pixels / load / fps) retained for quick reactivation */}
@@ -502,7 +502,7 @@ function App() {
                 style={{
                     position: 'relative',
                     zIndex: 20,
-                    marginTop: '5vh',
+                    marginTop: '5svh',
                 }}
             >
                 <SantosSite onOpenInquire={openInquire} />
@@ -515,7 +515,7 @@ function App() {
                 >
                     <div
                         ref={inquirePanelRef}
-                        className="bg-paper text-charcoal w-full md:max-w-2xl max-h-[90vh] rounded-t-md md:rounded-md shadow-2xl overflow-y-auto"
+                        className="bg-paper text-charcoal w-full md:max-w-2xl max-h-[90svh] rounded-t-md md:rounded-md shadow-2xl overflow-y-auto"
                     >
                         <div className="p-8 md:p-12">
                             <div className="flex justify-between items-start mb-10">

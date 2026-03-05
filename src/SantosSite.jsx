@@ -32,11 +32,21 @@ function SantosSite({ onOpenInquire }) {
             const ordered = [...childGroups].reverse();
             const cartoucheFadeDuration = 0.65;
             const staggerDelay = 0.85;
+            const santosLabel = svgEl?.querySelector('#santosOvelhoLABEL') ?? document.getElementById('santosOvelhoLABEL');
+            const leBaronLogo = svgEl?.querySelector('#LeBaronLogoGroup') ?? document.getElementById('LeBaronLogoGroup');
 
             const showAllLabels = () => {
                 ordered.forEach((g) => {
                     g.style.opacity = '1';
                 });
+                if (santosLabel) {
+                    santosLabel.style.display = 'block';
+                    gsap.set(santosLabel, { xPercent: 0 });
+                }
+                if (leBaronLogo) {
+                    leBaronLogo.style.display = 'block';
+                    gsap.set(leBaronLogo, { opacity: 1 });
+                }
             };
 
             st = ScrollTrigger.create({
@@ -49,6 +59,15 @@ function SantosSite({ onOpenInquire }) {
                         const start = i * staggerDelay;
                         tl.to(group, { opacity: 1, duration: cartoucheFadeDuration }, start);
                     });
+                    const cascadeEnd = (ordered.length - 1) * staggerDelay + cartoucheFadeDuration;
+                    if (santosLabel) {
+                        tl.set(santosLabel, { display: 'block', xPercent: 100 }, cascadeEnd);
+                        tl.to(santosLabel, { xPercent: 0, duration: 0.7, ease: 'power2.out' }, cascadeEnd);
+                    }
+                    if (leBaronLogo) {
+                        tl.set(leBaronLogo, { display: 'block', opacity: 0 }, cascadeEnd + 0.7);
+                        tl.to(leBaronLogo, { opacity: 1, duration: 1.8, ease: 'power1.inOut' }, cascadeEnd + 0.7);
+                    }
                 },
             });
 
@@ -316,10 +335,10 @@ function SantosSite({ onOpenInquire }) {
                 
                 {/* MAP / ENCLAVE SECTION */}
                 <section className="relative bg-paper pt-4 pb-8 md:pt-8 md:pb-12" id="map">
-                    <div ref={mapRef} className="w-full min-w-0 overflow-visible md:overflow-hidden" id="enclave-svg-container">
-                        <div className="mx-auto w-full max-w-5xl">
+                    <div ref={mapRef} className="w-full min-w-0 overflow-visible" id="enclave-svg-container">
+                        <div className="mx-auto w-full max-w-5xl flex justify-center">
                             <LisboaMap
-                                className="w-full h-auto block origin-center scale-[2] md:scale-[1.25]"
+                                className="w-full h-auto block origin-center scale-[2] md:scale-[1.25] object-contain"
                                 aria-hidden="true"
                             />
                         </div>
