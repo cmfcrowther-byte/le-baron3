@@ -11,8 +11,6 @@ const Sky = (props) => {
 
     useEffect(() => {
         const ctx = gsap.context(() => {
-            console.log("SKY ORDERS RECEIVED:", startPoint, endPoint);
-
             gsap.fromTo(skyRef.current,
                 { backgroundColor: "#f1f0eaff" }, // Day (brand-paper)
                 {

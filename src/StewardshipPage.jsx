@@ -27,7 +27,7 @@ const StewardshipNavBar = ({ onOpenInquire }) => {
             <div className="w-full max-w-[min(1440px,100%)] mx-auto px-6 h-14 md:h-16 flex items-center justify-between">
                 <div className="flex items-center">
                     <h2 className="font-serif text-xl md:text-2xl text-charcoal uppercase tracking-[0.18em]">
-                        <a href="/le-baron2/#santos-site">
+                        <a href="/le-baron3/#santos-site">
                             <span className="md:hidden">T.I.</span>
                             <span className="hidden md:inline">Trophée Immobilier</span>
                         </a>
@@ -36,14 +36,14 @@ const StewardshipNavBar = ({ onOpenInquire }) => {
                 <nav className="hidden md:flex gap-8 items-baseline ml-auto mr-8 text-[11px] uppercase tracking-[0.15em] text-stone leading-none">
                     <a
                         className="group relative inline-block hover:text-charcoal transition-colors leading-none"
-                        href="/le-baron2/archive.html"
+                        href="/le-baron3/archive.html"
                     >
                         The Archive
                         <span className="absolute bottom-0 left-0 w-full h-[1px] bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
                     </a>
                     <a
                         className="group relative inline-block hover:text-charcoal transition-colors leading-none"
-                        href="/le-baron2/stewardship.html"
+                        href="/le-baron3/stewardship.html"
                     >
                         The Stewardship
                         <span className="absolute bottom-0 left-0 w-full h-[1px] bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
@@ -90,14 +90,14 @@ const StewardshipNavBar = ({ onOpenInquire }) => {
                 <div className="md:hidden border-t border-stone-light/60 bg-paper/95 backdrop-blur">
                     <div className="px-6 py-4 space-y-3 text-[11px] uppercase tracking-[0.15em] text-stone text-right">
                         <a
-                            href="/le-baron2/archive.html"
+                            href="/le-baron3/archive.html"
                             className="block py-1 hover:text-charcoal"
                             onClick={() => setMobileOpen(false)}
                         >
                             The Archive
                         </a>
                         <a
-                            href="/le-baron2/stewardship.html"
+                            href="/le-baron3/stewardship.html"
                             className="block py-1 hover:text-charcoal"
                             onClick={() => setMobileOpen(false)}
                         >

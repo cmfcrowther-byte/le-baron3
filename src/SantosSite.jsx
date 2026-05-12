@@ -239,97 +239,62 @@ function SantosSite({ onOpenInquire }) {
                     <div className="max-w-4xl mx-auto space-y-16">
                         <header className="space-y-4 text-left">
                             <span className="copy-eyebrow flex items-center gap-4">
-                                The Strategic Narrative <span className="h-[1px] w-12 bg-stone-light/40" />
+                                Trophée Immobilier <span className="h-[1px] w-12 bg-stone-light/40" />
                             </span>
                             <h2 className="copy-section-title">
-                                Asset Strategy · Phased Value Creation
+                                Design-led hospitality and real estate investment in Lisbon.
                             </h2>
                             <p className="copy-body">
-                                We are deploying a dual-asset strategy to anchor the district: first, by establishing a cultural
-                                epicenter, and second, by restoring a heritage landmark.
+                                Trophée Immobilier acquires, develops, and operates distinctive hospitality assets and heritage properties in prime Lisbon locations, with a focus on long-term value creation and internationally relevant concepts.
                             </p>
                             <p className="copy-body">
-                                This sequencing mitigates the traditional ramp-up risk associated with hospitality developments by
-                                activating the membership base and revenue stream immediately. The result is a pre-conditioned
-                                market and captive occupancy demand established prior to the Hotel&apos;s delivery.
+                                We combine real estate, hospitality, branding, and operational expertise to create projects with strong cultural positioning and enduring asset value.
+                            </p>
+                            <p className="copy-body">
+                                Our approach focuses on carefully selected opportunities where design, repositioning, and hospitality experience can significantly enhance both performance and long-term appreciation.
                             </p>
                         </header>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 pt-[7rem]">
-                            {/* Phase I */}
+                            {/* Tillmans Townhouse */}
                             <article className="space-y-4 scroll-mt-28" id="prologue">
                                 <div className="space-y-3">
                                     <span className="copy-eyebrow flex items-center gap-4">
-                                        Phase I <span className="h-[1px] w-12 bg-stone-light/40" />
+                                        Tillmans Townhouse <span className="h-[1px] w-12 bg-stone-light/40" />
                                     </span>
                                     <h3 className="copy-title-md">
-                                        The Private Maison
+                                        Tillmans Townhouse
                                     </h3>
-                                    <p className="copy-caption">Operational 2026</p>
+                                    <p className="copy-caption">Central Lisbon</p>
                                 </div>
                                 <p className="copy-body">
-                                    An intimate flagship townhouse serving as the project&apos;s cultural anchor. Before the
-                                    hotel&apos;s inauguration, this venue operates as a private members&apos; salon—establishing
-                                    the brand&apos;s exclusivity and defining the district&apos;s new social hierarchy.
+                                    A boutique townhouse hospitality concept centred around privacy, design, and residential-style living. Located in central Lisbon, the project combines historic architecture with carefully considered contemporary interiors and a highly personalised guest experience.
                                 </p>
-                                <ul className="space-y-2">
-                                    <li className="flex gap-2">
-                                        <span className="text-primary mt-[2px]">•</span>
-                                        <span className="copy-list">
-                                            <span className="font-semibold text-charcoal">Status:</span> In Development
-                                        </span>
-                                    </li>
-                                    <li className="flex gap-2">
-                                        <span className="text-primary mt-[2px]">•</span>
-                                        <span className="copy-list">
-                                            <span className="font-semibold text-charcoal">Role:</span> Brand Equity &amp;
-                                            Cash Flow
-                                        </span>
-                                    </li>
-                                </ul>
+                                <p className="copy-body">
+                                    The project reflects increasing demand for smaller-scale hospitality environments that prioritise authenticity, location, and design quality over standardised luxury. The result is a more intimate and experience-led approach to urban hospitality.
+                                </p>
                             </article>
 
-                            {/* Phase II */}
+                            {/* Le Baron Lisbon */}
                             <article className="space-y-4 scroll-mt-28" id="riverside">
                                 <div className="space-y-3">
                                     <span className="copy-eyebrow flex items-center gap-4">
-                                        Phase II <span className="h-[1px] w-12 bg-stone-light/40" />
+                                        Le Baron Lisbon <span className="h-[1px] w-12 bg-stone-light/40" />
                                     </span>
                                     <h3 className="copy-title-md">
-                                        The Heritage Landmark
+                                        Le Baron Lisbon
                                     </h3>
-                                    <p className="copy-caption">Completing 2029</p>
+                                    <p className="copy-caption">Santos, Lisbon</p>
                                 </div>
                                 <p className="copy-body">
-                                    The meticulous restoration of a grand 19th-century palace fronting the Tagus River. Anchored
-                                    by 27 suites and extensive private gardens, this asset scales the Maison&apos;s intimacy into a
-                                    permanent, trophy hospitality destination.
+                                    An internationally recognised hospitality brand reimagined for Lisbon. Located in Santos, Le Baron Lisbon brings together boutique accommodation, dining, cultural programming, and private hospitality spaces within a restored historic building in one of the city&apos;s most established neighbourhoods.
                                 </p>
-                                <ul className="space-y-2">
-                                    <li className="flex gap-2">
-                                        <span className="text-primary mt-[2px]">•</span>
-                                        <span className="copy-list">
-                                            <span className="font-semibold text-charcoal">Status:</span> Architectural
-                                            Planning
-                                        </span>
-                                    </li>
-                                    <li className="flex gap-2">
-                                        <span className="text-primary mt-[2px]">•</span>
-                                        <span className="copy-list">
-                                            <span className="font-semibold text-charcoal">Role:</span> Asset Value &amp;
-                                            Legacy
-                                        </span>
-                                    </li>
-                                </ul>
+                                <p className="copy-body">
+                                    Founded in Paris in 2004, Le Baron became globally recognised for its influence across hospitality, fashion, music, and contemporary culture. The Lisbon project represents the next evolution of the brand — combining international cultural heritage with Lisbon&apos;s emergence as one of Europe&apos;s leading lifestyle destinations.
+                                </p>
                             </article>
                         </div>
 
-                        <div className="pt-16 md:pt-[10.5rem] pb-16">
-                            <h3 id="narrative-tagline" className="copy-tagline mb-12">
-                                One Philosophy. Two Scales. The Townhouse establishes the pulse; the Landmark secures the
-                                legacy.
-                            </h3>
-                        </div>
                     </div>
                 </section>
                 
@@ -348,39 +313,14 @@ function SantosSite({ onOpenInquire }) {
                         <span className="copy-eyebrow flex items-center gap-4 mb-4">
                             The Location <span className="h-[1px] w-12 bg-stone-light/40" />
                         </span>
-                        <h2 className="copy-section-title mb-2">The Enclave</h2>
-                        <p className="copy-body-muted mb-6">
-                            Lisbon&apos;s seat of long-term capital preservation.
-                        </p>
+                        <h2 className="copy-section-title mb-2">Lisbon</h2>
                         <div className="w-12 h-[1px] bg-primary mb-6" />
-                        <p className="copy-body mb-8">
-                            Originally the residential seat of 18th-century nobility, Santos-o-Velho has reclaimed its position
-                            as the city&apos;s undisputed aesthetic heart. A village-scale enclave of foreign embassies and
-                            galleries, the district commands the capital&apos;s highest demand while retaining a barrier to
-                            entry that protects asset value.
+                        <p className="copy-body mb-6">
+                            Lisbon has established itself as one of Europe&apos;s most attractive hospitality and lifestyle markets, supported by international tourism growth, infrastructure investment, and sustained global demand for high-quality urban experiences.
                         </p>
-                        <ul className="space-y-3">
-                            <li className="flex gap-2">
-                                <span className="text-primary mt-[2px]">•</span>
-                                <span className="copy-list">
-                                    <span className="font-semibold text-charcoal">Proximity:</span> 2 Minutes to Riverside
-                                    Promenade
-                                </span>
-                            </li>
-                            <li className="flex gap-2">
-                                <span className="text-primary mt-[2px]">•</span>
-                                <span className="copy-list">
-                                    <span className="font-semibold text-charcoal">Connectivity:</span> 20 Minutes to
-                                    International Airport
-                                </span>
-                            </li>
-                            <li className="flex gap-2">
-                                <span className="text-primary mt-[2px]">•</span>
-                                <span className="copy-list">
-                                    <span className="font-semibold text-charcoal">Context:</span> The Diplomatic Quarter
-                                </span>
-                            </li>
-                        </ul>
+                        <p className="copy-body mb-8">
+                            Trophée Immobilier focuses on prime locations with strong long-term fundamentals, cultural relevance, and constrained supply.
+                        </p>
                         <div className="mt-12 flex gap-4 copy-label">
                             <span>Lat: 38.7046</span>
                             <span>Long: -9.1621</span>
@@ -397,7 +337,7 @@ function SantosSite({ onOpenInquire }) {
                                 <div>
                                     <h3 className="font-serif text-2xl italic text-charcoal">The Portfolio</h3>
                                     <p className="text-[10px] uppercase tracking-widest text-stone mt-2">
-                                        Asset A: The Maison
+                                        Asset A: Tillmans Townhouse
                                     </p>
                                 </div>
                                 <div className="text-right text-stone/40 font-serif text-4xl opacity-20">01</div>
@@ -406,23 +346,14 @@ function SantosSite({ onOpenInquire }) {
                             {/* Mobile: text in site typography, images below */}
                             <div className="block md:hidden space-y-12">
                                 <div className="space-y-3">
-                                    <p className="copy-caption">The Technical Envelope</p>
                                     <p className="copy-body">
-                                        <span className="font-semibold text-charcoal">Configuration:</span> [Insert Suites] Private
-                                        Suites
+                                        A boutique townhouse hospitality concept centred around privacy, design, and residential-style living.
                                     </p>
                                     <p className="copy-body">
-                                        <span className="font-semibold text-charcoal">The Salon:</span> A sophisticated social
-                                        landscape for founding members.
+                                        Smaller-scale hospitality environments that prioritise authenticity, location, and design quality over standardised luxury.
                                     </p>
                                     <p className="copy-body">
-                                        <span className="font-semibold text-charcoal">Atmosphere:</span> Polished elegance with
-                                        personality. A dialogue of heavy linens, muted stone, and absolute discretion.
-                                    </p>
-                                    <p className="copy-body">
-                                        <span className="font-semibold text-charcoal">The Vision.</span> A &quot;cultural
-                                        heartbeat&quot; that bridges the gap between the heritage of the 18th century and the
-                                        spirited exclusivity of the Le Baron legacy.
+                                        A more intimate and experience-led approach to urban hospitality.
                                     </p>
                                 </div>
 
@@ -449,24 +380,14 @@ function SantosSite({ onOpenInquire }) {
                             {/* Desktop: original card + images */}
                             <div className="hidden md:grid grid-cols-2 gap-4">
                                 <div className="aspect-square bg-stone-light/30 rounded-sm p-5 flex flex-col space-y-2">
-                                    <p className="text-[11px] text-stone leading-relaxed">The Technical Envelope</p>
-                                    <p className="text-[11px] text-stone">
-                                        <span className="font-semibold text-charcoal">Configuration:</span> [Insert Suites]{' '}
-                                        Private Suites
-                                    </p>
-                                    <p className="text-[11px] text-stone">
-                                        <span className="font-semibold text-charcoal">The Salon:</span> A sophisticated social
-                                        landscape for founding members.
-                                    </p>
-                                    <p className="text-[11px] text-stone">
-                                        <span className="font-semibold text-charcoal">Atmosphere:</span> Polished elegance with
-                                        personality. A dialogue of heavy linens, muted stone, and absolute discretion.
+                                    <p className="text-[11px] text-stone leading-relaxed">
+                                        A boutique townhouse hospitality concept centred around privacy, design, and residential-style living.
                                     </p>
                                     <p className="text-[11px] text-stone leading-relaxed">
-                                        <span className="font-semibold text-charcoal">The Vision.</span> An initial
-                                        architectural expression of the Santos project. A &quot;cultural heartbeat&quot; that
-                                        bridges the gap between the heritage of the 18th century and the spirited exclusivity of
-                                        the Le Baron legacy.
+                                        Smaller-scale hospitality environments that prioritise authenticity, location, and design quality over standardised luxury.
+                                    </p>
+                                    <p className="text-[11px] text-stone leading-relaxed">
+                                        A more intimate and experience-led approach to urban hospitality.
                                     </p>
                                 </div>
 
@@ -494,7 +415,7 @@ function SantosSite({ onOpenInquire }) {
                                 <div>
                                     <h3 className="font-serif text-2xl italic text-charcoal">&nbsp;</h3>
                                     <p className="text-[10px] uppercase tracking-widest text-stone mt-2">
-                                        Asset B: The Hotel
+                                        Asset B: Le Baron Lisbon
                                     </p>
                                 </div>
                                 <div className="text-right text-stone/40 font-serif text-4xl opacity-20">02</div>
@@ -517,10 +438,7 @@ function SantosSite({ onOpenInquire }) {
                                         panoramic Tagus views
                                     </p>
                                     <p className="copy-body">
-                                        <span className="font-semibold text-charcoal">The Vision.</span> A rare &quot;Trophy Asset&quot;.
-                                        One of the last remaining riverside palaces in Lisbon, offering an unmatched combination of
-                                        historical fabric and private green space—a structural finiteness that new developments cannot
-                                        replicate.
+                                        <span className="font-semibold text-charcoal">The Brand.</span> Founded in Paris in 2004, Le Baron became globally recognised for its influence across hospitality, fashion, music, and contemporary culture. The Lisbon project represents the brand&apos;s next evolution.
                                     </p>
                                 </div>
 
@@ -562,10 +480,7 @@ function SantosSite({ onOpenInquire }) {
                                         panoramic Tagus views
                                     </p>
                                     <p className="text-[11px] text-stone leading-relaxed">
-                                        <span className="font-semibold text-charcoal">The Vision.</span> A rare &quot;Trophy
-                                        Asset&quot;. One of the last remaining riverside palaces in Lisbon, offering an unmatched
-                                        combination of historical fabric and private green space—a structural finiteness that new
-                                        developments cannot replicate.
+                                        <span className="font-semibold text-charcoal">The Brand.</span> Founded in Paris in 2004, Le Baron became globally recognised for its influence across hospitality, fashion, music, and contemporary culture. The Lisbon project represents the brand&apos;s next evolution.
                                     </p>
                                 </div>
 
@@ -639,6 +554,22 @@ function SantosSite({ onOpenInquire }) {
                                 </li>
                             </ul>
                         </div>
+                    </div>
+                </section>
+
+                {/* INVESTMENT PHILOSOPHY */}
+                <section className="px-8 pt-8 pb-16 md:px-20 md:pt-20 md:pb-20">
+                    <div className="max-w-4xl mx-auto space-y-6">
+                        <span className="copy-eyebrow flex items-center gap-4">
+                            Investment Philosophy <span className="h-[1px] w-12 bg-stone-light/40" />
+                        </span>
+                        <h2 className="copy-section-title">Investment Philosophy</h2>
+                        <p className="copy-body">
+                            We focus on hospitality and mixed-use real estate opportunities where branding, design, and operational repositioning can unlock significant long-term value.
+                        </p>
+                        <p className="copy-body">
+                            Our strategy combines disciplined acquisitions with creative development and international hospitality expertise.
+                        </p>
                     </div>
                 </section>
 
@@ -776,6 +707,22 @@ function SantosSite({ onOpenInquire }) {
                 </section>
             </main>
 
+            {/* APPROACH */}
+            <section className="px-8 pt-8 pb-24 md:px-20 md:pt-16 md:pb-24">
+                <div className="max-w-4xl mx-auto space-y-6">
+                    <span className="copy-eyebrow flex items-center gap-4">
+                        Approach <span className="h-[1px] w-12 bg-stone-light/40" />
+                    </span>
+                    <h2 className="copy-section-title">Approach</h2>
+                    <p className="copy-body">
+                        We believe successful hospitality projects are created through the combination of exceptional locations, strong design identity, operational quality, and cultural relevance.
+                    </p>
+                    <p className="copy-body">
+                        Each project is approached with a long-term perspective focused on both guest experience and enduring asset value.
+                    </p>
+                </div>
+            </section>
+
             {/* FOOTER */}
             <footer
                 id="footer"
@@ -784,16 +731,16 @@ function SantosSite({ onOpenInquire }) {
             >
                 <div className="max-w-2xl mx-auto flex flex-col items-center">
                     <div className="inline-block border border-white/20 px-3 py-1 text-[10px] tracking-[0.2em] uppercase mb-12 text-white/60">
-                        Strategic Partners Only
+                        Contact
                     </div>
                     <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl mb-8 leading-relaxed max-w-xl mt-6">
-                        Detailed architectural plans are reserved for strategic counterparts.
+                        For investment, acquisition, or partnership opportunities, please contact our team.
                     </h2>
                     <FooterInquireLink onOpenInquire={onOpenInquire} />
                     <div className="mt-16 flex flex-col items-center text-center pt-8 space-y-2">
                         <h4 className="text-xs font-bold uppercase tracking-widest">Trophée Immobilier</h4>
                         <div className="space-y-0">
-                            <p className="text-[10px] text-white/50">Santos-o-Velho, Lisbon</p>
+                            <p className="text-[10px] text-white/50">Luxembourg — Lisbon</p>
                             <p className="text-[10px] text-white/50">prive@tropheeimmo.com</p>
                         </div>
                         <p className="text-[10px] text-white/30 leading-relaxed pt-2">
